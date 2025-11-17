@@ -1,5 +1,336 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background: var(--bg-color) center/cover fixed no-repeat var(--bg-image);
+  font-family: "IBM Plex mono", monospace;
+  line-height: 130%;
+  font-size: var(--font-size);
 }
+
+.header {
+  height: 100vh;
+  min-height: 668px;
+  display: grid;
+  position: relative;
+  grid-template-rows: 1fr auto 1fr;
+  padding: var(--header-padding);
+}
+
+.decorated-zone::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  left: var(--header-padding);
+  bottom: var(--header-padding);
+  z-index: -1;
+  border-left: 1px solid var(--corner-color);
+  border-bottom: 1px solid var(--corner-color);
+}
+
+.decorated-zone::after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: var(--header-padding);
+  top: var(--header-padding);
+  z-index: -1;
+  border-right: 1px solid var(--corner-color);
+  border-top: 1px solid var(--corner-color);
+}
+
+.header__theme-menu {
+  align-items: center;
+  display: flex;
+  justify-content: end;
+}
+
+.header__theme-menu-button {
+  width: 70px;
+  height: 26px;
+  color: var(--section-title-color);
+  font-size: 18px;
+  font-weight: 400;
+  border: none;
+  font-family: "IBM Plex mono";
+  border-bottom: 1px solid transparent;
+  text-transform: lowercase;
+  transition: 0.5s;
+  outline: transparent;
+  text-align: center;
+  background: none;
+  cursor: pointer;
+}
+
+.header__theme-menu-button_active {
+  outline: var(--focus-color) solid 1px;
+}
+
+.header__theme-menu-button:hover {
+  outline: var(--hover-color) solid 1px;
+}
+
+.header__theme-menu-button:focus {
+  border-bottom: var(--focus-color);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: var(--focus-color) solid 1px;
+  outline: none;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  gap: var(--item-gap);
+  flex-direction: column;
+}
+
+.header__theme-menu-item {
+  list-style-type: none;
+}
+
+.header__title {
+  align-self: flex-end;
+  color: var(--title-color);
+  line-height: 50%;
+  font-size: clamp(7.25rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  text-shadow: 4px 4px 0px var(--title-shadow);
+}
+
+.header__text {
+  align-self: center;
+  font-weight: 700;
+  line-height: 130%;
+}
+
+.header__rec {
+  display: var(--display-header-rec);
+  position: absolute;
+  font-family: "IBM Plex mono";
+  text-transform: uppercase;
+  color: var(--rec-color);
+  top: calc(3px + var(--header-padding));
+  right: calc(29px + var(--header-padding));
+}
+
+.header__rec::after {
+  content: "";
+  position: absolute;
+  width: var(--item-gap);
+  margin: -5px -20px 0 0;
+  border-radius: 50%;
+  height: var(--item-gap);
+  box-shadow: 0 0 4px 2px var(--rec-color);
+  background-color: var(--rec-color);
+  right: 0;
+  top: 50%;
+}
+
+.title-decor {
+  color: var(--text-box-color);
+  background-color: var(--text-box-bg-color);
+}
+
+.main {
+  grid-template-rows: auto;
+  gap: 50px;
+  color: var(--main-text-color);
+  line-height: 130%;
+  padding: 45px 10px;
+  display: grid;
+}
+
+.section__content {
+  grid-template-rows: auto;
+  display: grid;
+  gap: var(--section-gap);
+}
+
+.section {
+  grid-template-columns: var(--section-rows);
+  gap: var(--section-gap);
+  display: grid;
+}
+
+.section__title {
+  font-size: var(--font-size);
+  color: var(--section-title-color);
+}
+
+.article {
+  display: flex;
+  line-height: 130%;
+  flex-direction: column;
+  gap: var(--item-gap);
+}
+
+.article__title {
+  color: var(--article-title-color);
+  font-size: 18px;
+  background-color: var(--text-box-bg-color);
+  font-weight: 700;
+}
+
+.article__subtitle {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.link {
+  outline: 1px solid transparent;
+  transition: 0.5s;
+  border-bottom: transparent;
+  text-shadow: 2px 2px 0px var(--title-shadow);
+  text-decoration: none;
+}
+
+.link:hover {
+  border-bottom: 1px solid var(--main-text-color);
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  outline: 1px solid var(--main-text-color);
+}
+
+.gallery {
+  display: flex;
+  gap: var(--item-gap);
+  flex-direction: column;
+}
+
+.gallery__title {
+  font-size: 18px;
+}
+
+.gallery__image {
+  display: flex;
+}
+
+.gallery__content {
+  gap: inherit;
+  display: grid;
+  grid-row: auto;
+}
+
+.gallery__image-item {
+  min-height: 100px;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.footer {
+  min-height: 668px;
+  position: relative;
+  display: flex;
+  height: 100vh;
+}
+
+.footer__title {
+  justify-self: center;
+  align-self: center;
+  margin: auto;
+  font-weight: 700;
+  line-height: 95.7px;
+  font-size: clamp(7.25rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  text-align: left;
+  text-shadow: 4px 4px 0px var(--title-shadow);
+  color: var(--title-color);
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    align-self: flex-start;
+    justify-self: center;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .section {
+    grid-template-columns: 1fr 2.06fr;
+  }
+
+  .section:nth-child(2) .section__title {
+    max-width: 315px;
+  }
+
+  .section:nth-child(2) .section__content {
+    grid-template-columns: repeat(3, 1.03fr);
+  }
+}
+
+@media (width >= 768px) {
+  :root {
+    --header-padding: 20px;
+  }
+
+  .header {
+    grid-template-rows: 1fr auto 1fr;
+  }
+
+  .header__title {
+    margin-inline: -20px;
+  }
+
+  .header__text {
+    inline-size: 50%;
+    justify-self: end;
+  }
+
+  .main {
+    padding: 60px 20px;
+    gap: 80px;
+  }
+
+  .section {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .section:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section:nth-child(2) .section__title {
+    max-width: 236px;
+  }
+
+  .gallery {
+    gap: 20px;
+  }
+
+  .gallery__content {
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+  }
+
+  .gallery__image:nth-child(1),
+  .gallery__image:nth-child(5) {
+    grid-column: span 2;
+  }
+
+  .gallery__image:nth-child(2),
+  .gallery__image:nth-child(3) {
+    grid-row: span 2;
+  }
+
+  .footer {
+    justify-content: center;
+  }
+}
+
