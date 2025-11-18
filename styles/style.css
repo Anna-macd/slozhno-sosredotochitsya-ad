@@ -8,7 +8,7 @@ html, body {
 }
 
 .page {
-  background: var(--bg-color) center/cover fixed no-repeat var(--bg-image);
+  background: var(--bg-color);
   font-family: "IBM Plex mono", monospace;
   line-height: 130%;
   font-size: var(--font-size);
