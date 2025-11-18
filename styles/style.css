@@ -12,6 +12,7 @@ html, body {
   font-family: "IBM Plex mono", monospace;
   line-height: 130%;
   font-size: var(--font-size);
+  background-attachment: fixed; 
 }
 
 .header {
@@ -262,11 +263,8 @@ html, body {
 
   .section {
     grid-template-columns: 1fr 2.06fr;
+    grid-template-rows: auto;
   }
-
-  /* .section:nth-child(2) .section__title {
-    max-width: 315px;
-  } */
   
   .section:nth-child(2) .section__title {
     max-width: 324px;
@@ -297,11 +295,6 @@ html, body {
   .main {
     padding: 60px 20px;
     gap: 80px;
-  }
-
-  .section {
-    grid-template-rows: auto;
-    grid-template-columns: 1fr 2fr;
   }
 
   .section:nth-child(2) {
@@ -409,7 +402,7 @@ html, body {
   }
 }
 
-@media (width = 375px){
+@media (width = 375px) {
   .section__title {
     margin-bottom: 10px;
     margin-top: -5px;
