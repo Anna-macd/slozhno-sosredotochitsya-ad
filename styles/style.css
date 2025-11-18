@@ -100,7 +100,7 @@ html, body {
 .header__title {
   align-self: flex-end;
   color: var(--title-color);
-  line-height: 50%;
+  line-height: 80%;
   font-size: clamp(7.25rem, 0.5625rem + 14.4531vw, 9.8125rem);
   text-shadow: 4px 4px 0px var(--title-shadow);
 }
@@ -156,7 +156,7 @@ html, body {
 
 .section {
   grid-template-columns: var(--section-rows);
-  gap: var(--section-gap);
+  gap: 12px;
   display: grid;
 }
 
@@ -307,7 +307,8 @@ html, body {
   }
 
   .section:nth-child(2) .section__title {
-    max-width: 236px;
+    max-width: 324px;
+    margin-bottom: 9px;
   }
 
   .gallery {
@@ -333,4 +334,3 @@ html, body {
     justify-content: center;
   }
 }
-
