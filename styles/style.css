@@ -262,7 +262,7 @@ html, body {
   }
 
   .section {
-    grid-template-columns: 1fr 2.06fr;
+    grid-template-columns: 1fr 2fr;
     grid-template-rows: auto;
   }
   
