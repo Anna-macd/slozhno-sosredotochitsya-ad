@@ -262,8 +262,8 @@ html, body {
   }
 
   .section {
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: auto;
   }
   
   .section:nth-child(2) .section__title {
